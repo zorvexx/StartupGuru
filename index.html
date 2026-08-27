@@ -8,18 +8,92 @@
 </head>
 <body>
 
-    <!-- Navigation -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">StartupGuru</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#submit">Submit Idea</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Auth Overlay Gate -->
+    <div id="authOverlay" class="auth-overlay">
+        <div class="auth-modal">
+            <div class="auth-header">
+                <div class="auth-logo">StartupGuru</div>
+                <p>Sign in or create an account to access StartupGuru insights.</p>
+            </div>
+
+            <!-- Auth Switch Tabs -->
+            <div class="auth-tabs">
+                <button type="button" id="tabLogin" class="auth-tab active">Log In</button>
+                <button type="button" id="tabRegister" class="auth-tab">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form" novalidate>
+                <div class="form-group">
+                    <label for="loginEmail">Email Address:</label>
+                    <input type="email" id="loginEmail" name="loginEmail" placeholder="Enter your email">
+                    <span class="error-msg" id="loginEmailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your password">
+                    <span class="error-msg" id="loginPasswordError"></span>
+                </div>
+
+                <span class="error-msg form-global-error" id="loginGlobalError"></span>
+
+                <button type="submit" class="btn btn-submit">Log In</button>
+                <p class="auth-toggle-text">Don't have an account? <a href="#" id="switchToRegister">Register here</a></p>
+            </form>
+
+            <!-- Register Form -->
+            <form id="registerForm" class="auth-form hidden" novalidate>
+                <div class="form-group">
+                    <label for="regName">Full Name:</label>
+                    <input type="text" id="regName" name="regName" placeholder="Enter your full name">
+                    <span class="error-msg" id="regNameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="regEmail">Email Address:</label>
+                    <input type="email" id="regEmail" name="regEmail" placeholder="Enter your email address">
+                    <span class="error-msg" id="regEmailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="regPassword">Password:</label>
+                    <input type="password" id="regPassword" name="regPassword" placeholder="Create a password (min. 6 characters)">
+                    <span class="error-msg" id="regPasswordError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="regConfirmPassword">Confirm Password:</label>
+                    <input type="password" id="regConfirmPassword" name="regConfirmPassword" placeholder="Re-enter your password">
+                    <span class="error-msg" id="regConfirmPasswordError"></span>
+                </div>
+
+                <span class="error-msg form-global-error" id="regGlobalError"></span>
+
+                <button type="submit" class="btn btn-submit">Create Account</button>
+                <p class="auth-toggle-text">Already have an account? <a href="#" id="switchToLogin">Log In here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Website Main Content -->
+    <div id="siteContent" class="site-content hidden">
+        <!-- Navigation -->
+        <header>
+            <nav class="navbar">
+                <div class="logo">StartupGuru</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#submit">Submit Idea</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div id="userNav" class="user-nav">
+                    <span id="userGreeting" class="user-greeting"></span>
+                    <button id="logoutBtn" class="btn btn-logout" type="button">Logout</button>
+                </div>
+            </nav>
+        </header>
 
     <main>
         <!-- Hero Section -->
@@ -119,6 +193,7 @@
     <footer>
         <p>&copy; 2026 StartupGuru. All rights reserved.</p>
     </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>

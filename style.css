@@ -150,6 +150,7 @@ header {
 
 input[type="text"],
 input[type="email"],
+input[type="password"],
 select,
 textarea {
     width: 100%;
@@ -164,6 +165,135 @@ select:focus,
 textarea:focus {
     outline: none;
     border-color: #2c3e50;
+}
+
+/* Visibility Control */
+.hidden {
+    display: none !important;
+}
+
+/* Auth Overlay Gate */
+.auth-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(44, 62, 80, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.auth-modal {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 35px 30px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.auth-logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 6px;
+}
+
+.auth-header p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Auth Tabs */
+.auth-tabs {
+    display: flex;
+    border-bottom: 2px solid #e2e8f0;
+    margin-bottom: 24px;
+}
+
+.auth-tab {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #7f8c8d;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.auth-tab:hover {
+    color: #2c3e50;
+}
+
+.auth-tab.active {
+    color: #2c3e50;
+    border-bottom: 3px solid #f39c12;
+    margin-bottom: -2px;
+}
+
+.auth-toggle-text {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+    color: #555555;
+}
+
+.auth-toggle-text a {
+    color: #2c3e50;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.auth-toggle-text a:hover {
+    color: #f39c12;
+    text-decoration: underline;
+}
+
+.form-global-error {
+    text-align: center;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+/* User Navbar Integration */
+.user-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-greeting {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn-logout {
+    background-color: #e74c3c;
+    color: #ffffff;
+    padding: 6px 14px;
+    font-size: 13px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-logout:hover {
+    background-color: #c0392b;
 }
 
 /* Error Messages */
