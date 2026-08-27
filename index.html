@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StartupGuru - Startup Idea Insights</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">StartupGuru</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#submit">Submit Idea</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Get Honest Feedback on Your Startup Idea</h1>
+            <p>Share your idea and receive practical, human-driven insights on market feasibility, target audience, and next steps.</p>
+            <a href="#submit" class="btn">Submit Your Idea</a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="container">
+            <h2>About Us</h2>
+            <p>StartupGuru helps aspiring founders, students, and creators validate their startup ideas before investing significant time and money.</p>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="container">
+            <h2>Our Evaluation Areas</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>1. Feasibility Analysis</h3>
+                    <p>Evaluating whether your idea is technically and practically buildable.</p>
+                </div>
+                <div class="card">
+                    <h3>2. Market Demand</h3>
+                    <p>Assessing target audience interest and existing market competitors.</p>
+                </div>
+                <div class="card">
+                    <h3>3. Timing & Relevance</h3>
+                    <p>Checking if current trends support the launch of your product.</p>
+                </div>
+                <div class="card">
+                    <h3>4. Business Model</h3>
+                    <p>Reviewing how your project can generate sustainable revenue.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Idea Submission Form -->
+        <section id="submit" class="container">
+            <div class="form-container">
+                <h2>Submit Your Startup Idea</h2>
+                <p>Fill in the form below for a founder-level analysis.</p>
+
+                <form id="ideaForm" novalidate>
+                    <div class="form-group">
+                        <label for="founderName">Your Name:</label>
+                        <input type="text" id="founderName" name="founderName" placeholder="Enter your full name">
+                        <span class="error-msg" id="nameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="founderEmail">Email Address:</label>
+                        <input type="email" id="founderEmail" name="founderEmail" placeholder="Enter your email">
+                        <span class="error-msg" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="startupName">Startup Name / Working Title:</label>
+                        <input type="text" id="startupName" name="startupName" placeholder="e.g. StudySwap">
+                        <span class="error-msg" id="startupNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="industry">Industry:</label>
+                        <select id="industry" name="industry">
+                            <option value="">-- Select Industry --</option>
+                            <option value="EdTech">EdTech (Education)</option>
+                            <option value="FinTech">FinTech (Finance)</option>
+                            <option value="HealthTech">Health & Wellness</option>
+                            <option value="E-Commerce">E-Commerce</option>
+                            <option value="SaaS">SaaS & Software</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span class="error-msg" id="industryError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pitch">Problem & Solution Description:</label>
+                        <textarea id="pitch" name="pitch" rows="4" placeholder="Briefly describe what problem you are solving and how..."></textarea>
+                        <span class="error-msg" id="pitchError"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-submit">Submit Idea</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container contact-section">
+            <h2>Contact Us</h2>
+            <p>Have questions? Reach out to us at <a href="mailto:support@startupguru.local">support@startupguru.local</a>.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 StartupGuru. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
