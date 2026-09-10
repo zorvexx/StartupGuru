@@ -1,29 +1,23 @@
-/* Global Styles */
+/* Global Reset & Base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
 body {
     background-color: #f4f6f9;
     color: #333333;
     line-height: 1.6;
 }
-
-/* Container */
 .container {
     max-width: 900px;
-    margin: 40px auto;
+    margin: 35px auto;
     padding: 0 20px;
 }
 
-/* Navigation Bar */
-header {
-    background-color: #2c3e50;
-}
-
+/* Header & Navbar */
+header { background-color: #2c3e50; }
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -32,45 +26,37 @@ header {
     margin: 0 auto;
     padding: 15px 20px;
 }
-
 .logo {
     font-size: 22px;
     font-weight: bold;
     color: #ffffff;
 }
-
 .nav-links {
     display: flex;
     list-style: none;
     gap: 20px;
 }
-
 .nav-links a {
     color: #ffffff;
     text-decoration: none;
     font-size: 15px;
 }
-
-.nav-links a:hover {
-    color: #f39c12;
-}
+.nav-links a:hover { color: #f39c12; }
 
 /* Hero Section */
 .hero {
     background-color: #34495e;
     color: #ffffff;
     text-align: center;
-    padding: 50px 20px;
+    padding: 45px 20px;
 }
-
 .hero h1 {
-    font-size: 32px;
-    margin-bottom: 12px;
+    font-size: 30px;
+    margin-bottom: 10px;
 }
-
 .hero p {
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     color: #ecf0f1;
 }
 
@@ -86,95 +72,116 @@ header {
     border: none;
     cursor: pointer;
 }
-
-.btn:hover {
-    background-color: #d68910;
-}
-
+.btn:hover { background-color: #d68910; }
 .btn-submit {
     width: 100%;
     background-color: #2c3e50;
     padding: 12px;
     font-size: 16px;
 }
+.btn-submit:hover { background-color: #1a252f; }
 
-.btn-submit:hover {
-    background-color: #1a252f;
-}
-
-/* Services Cards Grid */
+/* Services Grid */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     margin-top: 15px;
 }
-
 .card {
     background: #ffffff;
     border: 1px solid #ddd;
     border-radius: 6px;
     padding: 16px;
 }
-
 .card h3 {
     font-size: 16px;
     color: #2c3e50;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
-
 .card p {
     font-size: 14px;
     color: #555555;
 }
 
-/* Form Container */
+/* Slider Component */
+.slider-box {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 30px 60px;
+    margin-top: 15px;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.slide { display: none; }
+.slide.active { display: block; }
+.slide h3 { color: #2c3e50; margin-bottom: 6px; font-size: 16px; }
+.slide p { color: #555555; font-size: 14px; }
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #2c3e50;
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.slide-btn:hover { background-color: #1a252f; }
+#prevBtn { left: 15px; }
+#nextBtn { right: 15px; }
+.dots-box { text-align: center; margin-top: 10px; }
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 4px;
+    cursor: pointer;
+}
+.dot.active { background-color: #2c3e50; }
+
+/* Form Container & Inputs */
 .form-container {
     background: #ffffff;
     border: 1px solid #ddd;
     border-radius: 6px;
-    padding: 30px;
+    padding: 25px;
     margin-top: 15px;
 }
-
-.form-group {
-    margin-bottom: 16px;
-}
-
+.form-group { margin-bottom: 15px; }
 .form-group label {
     display: block;
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 5px;
 }
-
-input[type="text"],
-input[type="email"],
-select,
-textarea {
+input[type="text"], input[type="email"], select, textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
 }
-
-input:focus,
-select:focus,
-textarea:focus {
+input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: #2c3e50;
 }
-
-/* Error Messages */
 .error-msg {
     color: #c0392b;
     font-size: 13px;
     display: block;
     margin-top: 4px;
 }
-
-/* Contact Section */
+/* Contact & Footer */
 .contact-section {
     background: #ffffff;
     border: 1px solid #ddd;
@@ -182,18 +189,12 @@ textarea:focus {
     padding: 20px;
     text-align: center;
 }
-
-.contact-section a {
-    color: #2c3e50;
-    font-weight: bold;
-}
-
-/* Footer */
+.contact-section a { color: #2c3e50; font-weight: bold; }
 footer {
     background-color: #2c3e50;
     color: #ffffff;
     text-align: center;
     padding: 15px;
-    margin-top: 40px;
+    margin-top: 35px;
     font-size: 14px;
 }

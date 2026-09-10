@@ -1,27 +1,21 @@
 ﻿// Form Validation Script
 document.getElementById("ideaForm").addEventListener("submit", function (event) {
     event.preventDefault();
-
     let isValid = true;
 
-    // Get form field values
     let name = document.getElementById("founderName").value.trim();
     let email = document.getElementById("founderEmail").value.trim();
     let startupName = document.getElementById("startupName").value.trim();
     let industry = document.getElementById("industry").value;
     let pitch = document.getElementById("pitch").value.trim();
 
-    // Regular expression for email validation
-    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    // Reset previous error messages
     document.getElementById("nameError").innerText = "";
     document.getElementById("emailError").innerText = "";
     document.getElementById("startupNameError").innerText = "";
     document.getElementById("industryError").innerText = "";
     document.getElementById("pitchError").innerText = "";
 
-    // 1. Validate Name
+    // 1. Name Validation
     if (name === "") {
         document.getElementById("nameError").innerText = "Please enter your name.";
         isValid = false;
@@ -30,28 +24,28 @@ document.getElementById("ideaForm").addEventListener("submit", function (event) 
         isValid = false;
     }
 
-    // 2. Validate Email
+    // 2. Email Validation
     if (email === "") {
         document.getElementById("emailError").innerText = "Please enter your email address.";
         isValid = false;
-    } else if (!emailRegex.test(email)) {
+    } else if (!email.includes("@") || !email.includes(".")) {
         document.getElementById("emailError").innerText = "Please enter a valid email address.";
         isValid = false;
     }
 
-    // 3. Validate Startup Name
+    // 3. Startup Name Validation
     if (startupName === "") {
         document.getElementById("startupNameError").innerText = "Please enter your startup name.";
         isValid = false;
     }
 
-    // 4. Validate Industry
+    // 4. Industry Validation
     if (industry === "") {
         document.getElementById("industryError").innerText = "Please select an industry.";
         isValid = false;
     }
 
-    // 5. Validate Description / Pitch
+    // 5. Pitch Validation
     if (pitch === "") {
         document.getElementById("pitchError").innerText = "Please describe your problem and solution.";
         isValid = false;
@@ -60,9 +54,45 @@ document.getElementById("ideaForm").addEventListener("submit", function (event) 
         isValid = false;
     }
 
-    // If all inputs are valid
     if (isValid) {
         alert("Thank you! Your startup idea has been submitted successfully.");
         document.getElementById("ideaForm").reset();
     }
 });
+
+// Slider Script
+let currentSlide = 0;
+let slides = document.querySelectorAll(".slide");
+let dots = document.querySelectorAll(".dot");
+
+function showSlide(index) {
+    if (index >= slides.length) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = slides.length - 1;
+    } else {
+        currentSlide = index;
+    }
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+        dots[i].classList.remove("active");
+    }
+
+    slides[currentSlide].classList.add("active");
+    dots[currentSlide].classList.add("active");
+}
+
+document.getElementById("nextBtn").addEventListener("click", function () {
+    showSlide(currentSlide + 1);
+});
+
+document.getElementById("prevBtn").addEventListener("click", function () {
+    showSlide(currentSlide - 1);
+});
+
+for (let i = 0; i < dots.length; i++) {
+    dots[i].addEventListener("click", function () {
+        showSlide(i);
+    });
+}
