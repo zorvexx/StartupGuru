@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Estimator - StartupGuru</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Auth Overlay Gate -->
+    <div id="authOverlay" class="auth-overlay">
+        <div class="auth-modal">
+            <div class="auth-header">
+                <div class="auth-logo">StartupGuru</div>
+                <p>Sign in or create an account to access StartupGuru insights.</p>
+            </div>
+            <div class="auth-tabs">
+                <button type="button" id="tabLogin" class="auth-tab active">Log In</button>
+                <button type="button" id="tabRegister" class="auth-tab">Register</button>
+            </div>
+            <form id="loginForm" class="auth-form" novalidate>
+                <div class="form-group">
+                    <label for="loginEmail">Email Address:</label>
+                    <input type="email" id="loginEmail" name="loginEmail" placeholder="Enter your email">
+                    <span class="error-msg" id="loginEmailError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your password">
+                    <span class="error-msg" id="loginPasswordError"></span>
+                </div>
+                <span class="error-msg form-global-error" id="loginGlobalError"></span>
+                <button type="submit" class="btn btn-submit">Log In</button>
+                <p class="auth-toggle-text">Don't have an account? <a href="#" id="switchToRegister">Register here</a></p>
+            </form>
+            <form id="registerForm" class="auth-form hidden" novalidate>
+                <div class="form-group">
+                    <label for="regName">Full Name:</label>
+                    <input type="text" id="regName" name="regName" placeholder="Enter your full name">
+                    <span class="error-msg" id="regNameError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email Address:</label>
+                    <input type="email" id="regEmail" name="regEmail" placeholder="Enter your email address">
+                    <span class="error-msg" id="regEmailError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password:</label>
+                    <input type="password" id="regPassword" name="regPassword" placeholder="Create a password (min. 6 characters)">
+                    <span class="error-msg" id="regPasswordError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="regConfirmPassword">Confirm Password:</label>
+                    <input type="password" id="regConfirmPassword" name="regConfirmPassword" placeholder="Re-enter your password">
+                    <span class="error-msg" id="regConfirmPasswordError"></span>
+                </div>
+                <span class="error-msg form-global-error" id="regGlobalError"></span>
+                <button type="submit" class="btn btn-submit">Create Account</button>
+                <p class="auth-toggle-text">Already have an account? <a href="#" id="switchToLogin">Log In here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="siteContent" class="site-content hidden">
+        <header>
+            <nav class="navbar">
+                <a href="index.html" class="logo" style="text-decoration:none;">StartupGuru</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="showcase.html">Showcase</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="estimator.html">Estimator</a></li>
+                    <li><a href="submit.html">Submit Idea</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+                <div id="userNav" class="user-nav">
+                    <span id="userGreeting" class="user-greeting"></span>
+                    <button id="logoutBtn" class="btn btn-logout" type="button">Logout</button>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container">
+            <div class="page-hero">
+                <h1>Interactive Viability Estimator</h1>
+                <p>Use our interactive range sliders to test capital allocation, target market scale, and launch horizons.</p>
+            </div>
+
+            <!-- Estimator & Range Slider Section -->
+            <section id="estimator">
+                <div class="estimator-box">
+                    <h2>Interactive Startup Viability Calculator</h2>
+                    <p class="estimator-subtitle">Adjust the sliders below to calculate your startup's estimated launch viability index & market readiness.</p>
+                    
+                    <div class="estimator-grid">
+                        <div class="sliders-group">
+                            <div class="slider-field">
+                                <div class="slider-header">
+                                    <label for="budgetSlider">Estimated Initial Budget ($):</label>
+                                    <span class="slider-value" id="budgetValue">$10,000</span>
+                                </div>
+                                <input type="range" id="budgetSlider" min="1000" max="100000" step="1000" value="10000" class="custom-slider">
+                                <div class="slider-range-labels">
+                                    <span>$1,000</span>
+                                    <span>$50,000</span>
+                                    <span>$100,000+</span>
+                                </div>
+                            </div>
+
+                            <div class="slider-field">
+                                <div class="slider-header">
+                                    <label for="marketSlider">Target Audience Size (Users):</label>
+                                    <span class="slider-value" id="marketValue">50,000 users</span>
+                                </div>
+                                <input type="range" id="marketSlider" min="5000" max="500000" step="5000" value="50000" class="custom-slider">
+                                <div class="slider-range-labels">
+                                    <span>5,000</span>
+                                    <span>250,000</span>
+                                    <span>500,000+</span>
+                                </div>
+                            </div>
+
+                            <div class="slider-field">
+                                <div class="slider-header">
+                                    <label for="timelineSlider">Development Timeline (Months):</label>
+                                    <span class="slider-value" id="timelineValue">6 Months</span>
+                                </div>
+                                <input type="range" id="timelineSlider" min="1" max="18" step="1" value="6" class="custom-slider">
+                                <div class="slider-range-labels">
+                                    <span>1 Mo</span>
+                                    <span>9 Mos</span>
+                                    <span>18 Mos</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="estimator-result-card">
+                            <h3>Viability & Readiness Index</h3>
+                            <div class="score-display">
+                                <span class="score-number" id="viabilityScore">78</span>
+                                <span class="score-unit">/100</span>
+                            </div>
+                            <div class="score-bar-container">
+                                <div class="score-bar-fill" id="scoreBarFill" style="width: 78%;"></div>
+                            </div>
+                            <p class="score-description" id="scoreDescription">Strong balance of timeline and resource allocation for an early MVP.</p>
+
+                            <button type="button" id="toggleBreakdownBtn" class="btn-breakdown">View Metric Breakdown &#9662;</button>
+                            <div id="scoreBreakdownPanel" class="score-breakdown hidden">
+                                <div class="breakdown-item">
+                                    <span>Capital Weight:</span>
+                                    <strong id="budgetFactorVal">7.0 / 35</strong>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span>Market Scale:</span>
+                                    <strong id="marketFactorVal">10.0 / 40</strong>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span>Timeline Horizon:</span>
+                                    <strong id="timelineFactorVal">25.0 / 25</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 StartupGuru. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

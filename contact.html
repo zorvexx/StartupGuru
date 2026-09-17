@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StartupGuru - Startup Idea Insights</title>
+    <title>Contact Us - StartupGuru</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,70 +15,55 @@
                 <div class="auth-logo">StartupGuru</div>
                 <p>Sign in or create an account to access StartupGuru insights.</p>
             </div>
-
-            <!-- Auth Switch Tabs -->
             <div class="auth-tabs">
                 <button type="button" id="tabLogin" class="auth-tab active">Log In</button>
                 <button type="button" id="tabRegister" class="auth-tab">Register</button>
             </div>
-
-            <!-- Login Form -->
             <form id="loginForm" class="auth-form" novalidate>
                 <div class="form-group">
                     <label for="loginEmail">Email Address:</label>
                     <input type="email" id="loginEmail" name="loginEmail" placeholder="Enter your email">
                     <span class="error-msg" id="loginEmailError"></span>
                 </div>
-
                 <div class="form-group">
                     <label for="loginPassword">Password:</label>
                     <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your password">
                     <span class="error-msg" id="loginPasswordError"></span>
                 </div>
-
                 <span class="error-msg form-global-error" id="loginGlobalError"></span>
-
                 <button type="submit" class="btn btn-submit">Log In</button>
                 <p class="auth-toggle-text">Don't have an account? <a href="#" id="switchToRegister">Register here</a></p>
             </form>
-
-            <!-- Register Form -->
             <form id="registerForm" class="auth-form hidden" novalidate>
                 <div class="form-group">
                     <label for="regName">Full Name:</label>
                     <input type="text" id="regName" name="regName" placeholder="Enter your full name">
                     <span class="error-msg" id="regNameError"></span>
                 </div>
-
                 <div class="form-group">
                     <label for="regEmail">Email Address:</label>
                     <input type="email" id="regEmail" name="regEmail" placeholder="Enter your email address">
                     <span class="error-msg" id="regEmailError"></span>
                 </div>
-
                 <div class="form-group">
                     <label for="regPassword">Password:</label>
                     <input type="password" id="regPassword" name="regPassword" placeholder="Create a password (min. 6 characters)">
                     <span class="error-msg" id="regPasswordError"></span>
                 </div>
-
                 <div class="form-group">
                     <label for="regConfirmPassword">Confirm Password:</label>
                     <input type="password" id="regConfirmPassword" name="regConfirmPassword" placeholder="Re-enter your password">
                     <span class="error-msg" id="regConfirmPasswordError"></span>
                 </div>
-
                 <span class="error-msg form-global-error" id="regGlobalError"></span>
-
                 <button type="submit" class="btn btn-submit">Create Account</button>
                 <p class="auth-toggle-text">Already have an account? <a href="#" id="switchToLogin">Log In here</a></p>
             </form>
         </div>
     </div>
 
-    <!-- Website Main Content -->
+    <!-- Main Content -->
     <div id="siteContent" class="site-content hidden">
-        <!-- Navigation -->
         <header>
             <nav class="navbar">
                 <a href="index.html" class="logo" style="text-decoration:none;">StartupGuru</a>
@@ -99,60 +84,46 @@
             </nav>
         </header>
 
-        <main>
-            <!-- Hero Section -->
-            <section class="hero">
-                <h1>Get Honest Feedback on Your Startup Idea</h1>
-                <p>Share your idea and receive practical, human-driven insights on market feasibility, target audience, and next steps.</p>
-                <a href="submit.html" class="btn">Submit Your Idea</a>
-            </section>
+        <main class="container">
+            <div class="page-hero">
+                <h1>Contact Us & HQ Location</h1>
+                <p>Reach out to our team or locate our founder evaluation center on the map below.</p>
+            </div>
 
-            <!-- Dashboard Modules Grid -->
-            <section class="container">
-                <h2>Explore StartupGuru Tools & Services</h2>
-                <div class="cards-grid">
-                    <div class="card">
-                        <h3>📖 About Us</h3>
-                        <p>Learn about our mission to help early-stage founders validate their concepts before spending capital.</p>
-                        <a href="about.html" class="btn" style="margin-top: 10px;">Learn More</a>
+            <section id="contact" class="container contact-section" style="margin-top:0; padding:30px;">
+                <h2>Get in Touch</h2>
+                <p>Have questions, partnership inquiries, or need support? Send an email to <a href="mailto:support@startupguru.local">support@startupguru.local</a>.</p>
+
+                <!-- Contact Grid with Map Embed -->
+                <div class="contact-grid">
+                    <div class="map-card">
+                        <h3>📍 Headquarters Info</h3>
+                        <p>Our advisory hub provides virtual and on-site evaluation sessions for founders.</p>
+                        
+                        <ul class="contact-info-list">
+                            <li><strong>Address:</strong> 100 Innovation Boulevard, Tech Park, CA 94025</li>
+                            <li><strong>Email:</strong> support@startupguru.local</li>
+                            <li><strong>Hours:</strong> Mon - Fri: 9:00 AM - 6:00 PM PST</li>
+                        </ul>
                     </div>
-                    <div class="card">
-                        <h3>🌟 Success Showcase</h3>
-                        <p>Explore real founder stories and testimonials from successful startups evaluated on StartupGuru.</p>
-                        <a href="showcase.html" class="btn" style="margin-top: 10px;">View Stories</a>
-                    </div>
-                    <div class="card">
-                        <h3>🔍 Evaluation Services</h3>
-                        <p>Discover our core evaluation pillars: Feasibility Analysis, Market Demand, Timing & Business Models.</p>
-                        <a href="services.html" class="btn" style="margin-top: 10px;">View Services</a>
-                    </div>
-                    <div class="card">
-                        <h3>🎛️ Interactive Estimator</h3>
-                        <p>Calculate your startup's viability score using our dynamic budget, user market, and timeline sliders.</p>
-                        <a href="estimator.html" class="btn" style="margin-top: 10px;">Try Estimator</a>
-                    </div>
-                    <div class="card">
-                        <h3>💡 Submit Your Idea</h3>
-                        <p>Ready for a founder-level analysis? Fill in your startup details and get structured feedback.</p>
-                        <a href="submit.html" class="btn" style="margin-top: 10px;">Submit Idea</a>
-                    </div>
-                    <div class="card">
-                        <h3>👤 Founder Profile</h3>
-                        <p>View your account info, manage your profile, and see all your past submitted startup ideas.</p>
-                        <a href="profile.html" class="btn" style="margin-top: 10px;">Go to Profile</a>
+
+                    <div class="map-card">
+                        <h3>🗺️ Interactive Location Map</h3>
+                        <p>Explore our HQ location on the interactive map below:</p>
+                        
+                        <div class="map-container">
+                            <iframe 
+                                class="map-iframe"
+                                title="StartupGuru Office Location Map"
+                                src="https://www.openstreetmap.org/export/embed.html?bbox=-122.18%2C37.42%2C-122.12%2C37.46&amp;layer=mapnik&amp;marker=37.4419%2C-122.15"
+                                loading="lazy">
+                            </iframe>
+                        </div>
                     </div>
                 </div>
             </section>
-
-            <!-- Contact Teaser Section -->
-            <section class="container contact-section">
-                <h2>Questions or Business Inquiries?</h2>
-                <p>Visit our dedicated contact page with interactive map and location details.</p>
-                <a href="contact.html" class="btn" style="margin-top: 12px; display: inline-block;">Contact & Location Map</a>
-            </section>
         </main>
 
-        <!-- Footer -->
         <footer>
             <p>&copy; 2026 StartupGuru. All rights reserved.</p>
         </footer>
