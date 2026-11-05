@@ -1,0 +1,10 @@
+{
+  "name": "startupguru-backend",
+  "version": "1.0.0",
+  "description": "StartupGuru Backend API Server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "node index.js"
+  }
+}
